@@ -1,0 +1,252 @@
+<style>
+    .main-image {
+        height: 50%;
+        border-radius: 50px;
+        margin: 5% auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .image{
+        height: 90px;
+        width: 160px;
+        border-radius: 10px;
+    }
+    .post{
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .heading{
+        text-align: center;
+    }
+    .ending{
+        text-align: center;
+        margin-top: 50px;
+    }
+    .custom-hr {
+        border: none;
+        height: 10px;
+        background-image: radial-gradient(circle, grey 15%, transparent 15%), radial-gradient(circle, grey 15%, transparent 15%);
+        background-size: 10px 15px;
+        background-position: 0 0, 20px 0;
+        width: 15%;
+    }
+
+    /* .btn{
+      display: block;
+      width: 150px;
+      cursor: pointer; */
+      /* margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 0;
+      border: none;  
+      font-size: medium;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px ;
+      border-radius: 100px;
+      transition: all .2s;
+       
+    }
+
+    
+    .btn:link,
+    .btn:visited {
+      display: block;
+      width: 200px;
+      cursor: pointer;
+      margin: 20px auto;
+      border: none;  
+
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 100px;
+      transition: all .2s;
+      
+    }
+  .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      
+  }
+
+  .btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      
+  }
+
+  .btn-white {
+    background-color: #30A2FF;
+    color: white;
+  }
+
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+  .btn-white::after {
+    background-color: white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    /* animation: moveInBottom 5s ease-out; */
+    /* animation-fill-mode: backwards;
+}
+
+  @keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}  */
+
+
+.btn{
+      display: block;
+      width: 150px;
+      cursor: pointer;
+      /* margin-top: 10px; */
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 0;
+      border: none;  
+      font-size: medium;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px ;
+      border-radius: 100px;
+      transition: all .2s;
+       
+    }
+
+    
+    .btn:link,
+    .btn:visited {
+      display: block;
+      width: 200px;
+      cursor: pointer;
+      margin: 20px auto;
+      border: none;  
+
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 100px;
+      transition: all .2s;
+      
+}
+
+  .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-white {
+    background-color: #30A2FF;
+    color: white;
+  }
+
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+  .btn-white::after {
+    background-color: white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    /* animation: moveInBottom 5s ease-out; */
+    animation-fill-mode: backwards;
+}
+
+  @keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+</style>
+
+
+<%- include("partials/header"); -%>
+<h1 class="heading">Home</h1>
+<img class="main-image" src="https://images.pexels.com/photos/1995842/pexels-photo-1995842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="stories matter image" srcset="">
+<p><%= homeStartingContentVar %></p> 
+<h3 id="blogs">My Blogs</h3>
+    <div class="post">
+        <%  posts.forEach(function(post){ %>
+        <h2><%=post.title%></h2>
+        <img class="image" src="<%=post.imageUrl%>">
+        <div class="content">
+            <p><%=post.content.substring(0, 100) + " ..."%></p>
+            <a class="btn btn-animated btn-white" href="/posts/<%=post._id%>">Read More</a>
+        </div>
+        <hr class="custom-hr">
+        <% }) %>
+        
+    </div>
+    
+    
+    <p class="ending">Thats it for now. Consider subscribing to our newsletter for more!</p>
+    <a class="btn btn-animated btn-white" href="/newsletter">Newsletter</a>
+
+
+<%- include("partials/footer"); -%>
+
+

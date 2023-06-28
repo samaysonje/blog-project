@@ -1,0 +1,122 @@
+<%- include("partials/header"); -%>
+
+
+<style>
+    img{
+        display: block;
+        width: 40%;
+        margin: auto;
+        /* height: 60%; */
+    }
+    .btn{
+      display: block;
+      width: 150px;
+      cursor: pointer;
+      /* margin-top: 10px; */
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 0;
+      border: none;  
+      font-size: medium;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px ;
+      border-radius: 100px;
+      transition: all .2s;
+       
+    }
+
+    
+    .btn:link,
+    .btn:visited {
+      display: block;
+      width: 75px;
+      cursor: pointer;
+      margin: 20px auto;
+      border: none;  
+
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 40px;
+      border-radius: 100px;
+      transition: all .2s;
+      
+}
+
+  .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      color: white;
+  }
+
+  .btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      
+  }
+
+  .btn-white {
+    background-color: #30A2FF;
+    color: white;
+  }
+
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+  .btn-white::after {
+    background-color: white;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    /* animation: moveInBottom 5s ease-out; */
+    animation-fill-mode: backwards;
+}
+
+  @keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+</style>
+
+<h1>Compose</h1>
+
+<form action="/compose" method="post">
+    <div class="form-group">
+        <img src="https://img.freepik.com/premium-vector/woman-composing-music-melody-creative-mind-character-isolated-white-background_81894-6407.jpg?w=2000" alt="">
+        <label>Title</label>
+        <input type="text" name="postTitle" class="form-control" required>
+        <label>Image URL</label>
+        <input type="text" name="imageUrl" class="form-control">
+        <label>Post</label>
+        <textarea name="postBody" id="" cols="30" rows="10" class="form-control" required></textarea>
+    </div>
+    <button class="btn btn-white btn-animated" type="submit">publish</button>
+</form>
+
+
+<%- include("partials/footer"); -%>
+
