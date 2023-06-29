@@ -11,8 +11,12 @@
     font-size: 12px;
     letter-spacing: 4px;
 }
-.navbar-nav  li a:hover {
-    color: #30A2FF;
+.navbar-nav li a:hover {
+    color: #30A2FF !important;
+}
+
+.navbar-brand:hover{
+    color: #30A2FF !important;
 }
 
 .footer {
@@ -32,7 +36,7 @@
   color: black;
 }
 a:hover{
-    color: white;
+    color: white !important
 }
 
 

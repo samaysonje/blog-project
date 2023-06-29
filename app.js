@@ -13,7 +13,7 @@ const https = require('https');
 
 
 const homeStartingContent = "Explore a rich tapestry of articles, thought-provoking insights, and heartfelt stories crafted to brighten your day and bring a smile to your face. Join us as we celebrate the beauty of life, uncover hidden gems, and discover the extraordinary in the ordinary.";
-const aboutContent = "Hello. I am Samay Sonje. I am currently in VIT college of enginnering in batch of 2024 majoring in computer science. I am a full-stack web developer. I made this project to consolidate my web dev knowledge and showcase my skills by making something that has practical viability.";
+const aboutContent = "Hello, I am Samay Sonje, currently studying at VIT College of Engineering, pursuing a major in Computer Science. I am expected to graduate in the batch of 2024. I am a full-stack web developer, and I developed this project to consolidate my web development knowledge and showcase my skills by creating something with practical viability.";
 const contactContent = "I would love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to me. Any suggestion and constructive criticism is welcomed and appreciated! Do consider subscribing to the newsletter for more exiciting stories and articles";
 
 const app = express();
@@ -87,7 +87,8 @@ passport.deserializeUser(function(id, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/blog",
+  // callbackURL: "http://localhost:3000/auth/google/blog",
+  callbackURL: "https://blog-project-37cb.onrender.com/auth/google/blog",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 },
 function(accessToken, refreshToken, profile, cb) {

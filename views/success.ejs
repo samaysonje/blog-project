@@ -1,133 +1,201 @@
-<!-- success.ejs -->
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Success Page</title>
-  <style>
-    body {
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 50px;
-    }
 
-    h1 {
-      color: #333333;
-    }
 
-    p {
-      color: #666666;
-    }
-    /* a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #333333;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 4px;
-      margin-top: 20px;
-    }
 
-    a:hover {
-      background-color: #555555;
-    } */
-    .btn{
-      display: block;
-      width: 150px;
-      cursor: pointer;
-      /* margin-top: 10px; */
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 20px;
-      margin-bottom: 0;
-      border: none;  
-      font-size: medium;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 15px ;
-      border-radius: 100px;
-      transition: all .2s;
+
+
+
+
+
+
+
+
+
+
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>Welcome to Samay's Blog</title>
+   <style>
+     body {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 100vh;
+       background-color: white;
+       font-family: Arial, sans-serif;
+     }
+ 
+     .container {
+       display: flex; /* Added */
+       align-items: center; /* Added */
+       justify-content: center; /* Added */
+       padding: 20px;
+       /* flex-direction: column; */
+       /* background-color: #99DBF5; */
+       border-radius: 5px;
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+     }
+     .inner-container{
+       display: flex;
+       flex-direction: column;
+     }
+ 
+     input[type="text"],
+     input[type="email"],
+     input[type="password"] {
+       display: block;
+       width: 200px;
+       padding: 10px;
+       border: 1px solid #ccc;
+       border-radius: 3px;
+       margin: 10px auto;
+       border-radius: 10px;
+     }
+ 
+     .image-container {
+       flex: 1; /* Added */
+       text-align: center;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+ 
+     .image-container img {
+       max-width: 100%;
+       /* height: auto; */
+       max-width: 100%;
+       max-height: 100%;
+       object-fit: cover;
+     }
+ 
+     .form-container {
+       flex: 1; /* Added */
+       text-align: center;
+     }
+ 
+     h1 {
+       font-size: 24px;
+       color: #333;
+       margin-bottom: 5px;
+     }
+ 
+     .btn{
+       display: block;
+       width: 150px;
+       cursor: pointer;
+       /* margin-top: 10px; */
+       margin-left: auto;
+       margin-right: auto;
+       margin-top: 20px;
+       margin-bottom: 0;
+       border: none;  
+       font-size: medium;
+       text-transform: uppercase;
+       text-decoration: none;
+       padding: 15px ;
+       border-radius: 100px;
+       transition: all .2s;
+        
+     }
+ 
+     
+     .btn:link,
+     .btn:visited {
+       display: block;
+       width: 75px;
+       cursor: pointer;
+       margin: 20px auto;
+       border: none;  
+ 
+       text-transform: uppercase;
+       text-decoration: none;
+       padding: 15px 40px;
+       border-radius: 100px;
+       transition: all .2s;
        
-    }
-
-    
-    .btn:link,
-    .btn:visited {
-      display: block;
-      width: 75px;
-      cursor: pointer;
-      margin: 20px auto;
-      border: none;  
-
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 15px 40px;
-      border-radius: 100px;
-      transition: all .2s;
-      
-}
-
-  .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn:active {
-      transform: translateY(-1px);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-white {
-    background-color: #30A2FF;
-    color: white;
-  }
-
-  .btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-
-  .btn-white::after {
-    background-color: white;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn-animated {
-    /* animation: moveInBottom 5s ease-out; */
-    animation-fill-mode: backwards;
-}
-
-  @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
-
-  </style>
-</head>
-<body>
-  <h1>Success!</h1>
-  <img src="https://static.vecteezy.com/system/resources/thumbnails/005/605/248/small/the-business-man-was-celebrating-and-jumping-with-a-trophy-in-his-hand-enjoying-business-victories-business-concept-success-illustration-free-vector.jpg" alt="">
-  <p>Your subscription was successful.</p>
-  <a class="btn btn-animated btn-white" href="/home">Home</a>
-</body>
-</html>
+ }
+ 
+   .btn:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+   }
+ 
+   .btn:active {
+       transform: translateY(-1px);
+       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   }
+ 
+   .btn-white {
+     background-color: #30A2FF;
+     color: white;
+   }
+ 
+   .btn::after {
+     content: "";
+     display: inline-block;
+     height: 100%;
+     width: 100%;
+     border-radius: 100px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -1;
+     transition: all .4s;
+ }
+ 
+   .btn-white::after {
+     background-color: white;
+ }
+ 
+ .btn:hover::after {
+     transform: scaleX(1.4) scaleY(1.6);
+     opacity: 0;
+ }
+ 
+ .btn-animated {
+     /* animation: moveInBottom 5s ease-out; */
+     animation-fill-mode: backwards;
+ }
+ 
+   @keyframes moveInBottom {
+     0% {
+         opacity: 0;
+         transform: translateY(30px);
+     }
+ 
+     100% {
+         opacity: 1;
+         transform: translateY(0px);
+     }
+ }
+ 
+   </style>
+ </head>
+ <body>
+   <div class="container">
+     <div class="image-container">
+       <img src="https://static.vecteezy.com/system/resources/thumbnails/005/605/248/small/the-business-man-was-celebrating-and-jumping-with-a-trophy-in-his-hand-enjoying-business-victories-business-concept-success-illustration-free-vector.jpg" alt="Image">
+     </div>
+     <div class="form-container">
+         <div class="inner-container">
+           <h1>Success!</h1>
+           <p class="message">Your subscription was successful.</p>
+           <a href="/home" class="btn btn-white btn-animated">home</a>
+         </div>
+     </div>
+   </div>
+ </body>
+ </html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
