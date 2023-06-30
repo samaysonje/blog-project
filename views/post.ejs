@@ -1,18 +1,44 @@
 <style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .containerr {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
     h1{
         text-align: center;
+        font-size: 32px;
+        margin-bottom: 20px;
+        font-weight: 1000 !important;
+
     }
     img{
         display: block;
-        height: 450px;
-        width: 800px;
-        margin: 50px auto;
+        max-width: 100%;
+        height: auto;
+        margin: 30px auto;
         border-radius: 20px;
+    }
+    p{
+        font-size: 18px;
+        margin-bottom: 20px;
     }
 </style>
 
 <%- include("partials/header"); -%>
+
+<div class="containerr">
 <h1><%= title %></h1>
 <img  src="<%=imageUrl%>"/>
-<p><%= content %></p>
+<!-- <p><%= content %></p> -->
+<%- content %>
+</div>
+
 <%- include("partials/footer"); -%>

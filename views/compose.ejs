@@ -101,7 +101,7 @@
 }
 
 </style>
-
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <h1>Compose</h1>
 
 <form action="/compose" method="post">
@@ -115,6 +115,9 @@
         <textarea name="postBody" id="" cols="30" rows="10" class="form-control" required></textarea>
     </div>
     <button class="btn btn-white btn-animated" type="submit">publish</button>
+    <script>
+      CKEDITOR.replace( 'postBody' );
+  </script>
 </form>
 
 
